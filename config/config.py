@@ -2,4 +2,5 @@
 from pathlib import Path
 
 ROOT_PATH = Path(__file__).parent.parent
-MODELS_PATH = ROOT_PATH / "src/web_service/local_models"
+OBJECTS_PATH = ROOT_PATH / "src/web_service/local_objects"
+TARGET = "rings"
