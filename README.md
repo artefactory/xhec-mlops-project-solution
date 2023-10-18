@@ -3,7 +3,7 @@
 # xhec-mlops-project-solution
 
 [![CI status](https://github.com/artefactory/xhec-mlops-project-solution/actions/workflows/ci.yaml/badge.svg)](https://github.com/artefactory/xhec-mlops-project-solution/actions/workflows/ci.yaml?query=branch%3Amain)
-[![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue.svg)]()
+[![Python Version](https://img.shields.io/badge/python-3.9%20%7C%203.10-blue.svg)]()
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
@@ -85,7 +85,7 @@ Example:
 
 This repository comes with a pre-trained model. If you want to train the model yourself, you can:
 
-1. Install the dependencies in a virtual environment:
+1. Install the dependencies in a virtual environment (python 3.9 or higher):
 
 ```bash
 pip install -r requirements.txt
