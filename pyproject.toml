@@ -44,6 +44,8 @@ ignore = [
   "ANN102",
   "N803",
   "PTH123",
+  "PD901",
+  "RET504",
 ]
 line-length = 100
 target-version = "py310"
