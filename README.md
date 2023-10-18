@@ -12,8 +12,6 @@
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-informational?logo=pre-commit&logoColor=white)](https://github.com/artefactory/xhec-mlops-project-solution/blob/main/.pre-commit-config.yaml)
 </div>
 
-TODO: if not done already, check out the [Skaff documentation](https://artefact.roadie.so/catalog/default/component/repo-builder-ds/docs/) for more information about the generated repository.
-
 TODO
 
 ## Table of Contents
