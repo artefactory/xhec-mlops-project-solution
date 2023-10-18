@@ -1,15 +1,15 @@
 <div align="center">
 
-# xhec-mlops-crashcourse-2023-project
+# xhec-mlops-project-solution
 
-[![CI status](https://github.com/artefactory/xhec-mlops-crashcourse-2023-project/actions/workflows/ci.yaml/badge.svg)](https://github.com/artefactory/xhec-mlops-crashcourse-2023-project/actions/workflows/ci.yaml?query=branch%3Amain)
+[![CI status](https://github.com/artefactory/xhec-mlops-project-solution/actions/workflows/ci.yaml/badge.svg)](https://github.com/artefactory/xhec-mlops-project-solution/actions/workflows/ci.yaml?query=branch%3Amain)
 [![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue.svg)]()
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 [![Linting: ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
-[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-informational?logo=pre-commit&logoColor=white)](https://github.com/artefactory/xhec-mlops-crashcourse-2023-project/blob/main/.pre-commit-config.yaml)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-informational?logo=pre-commit&logoColor=white)](https://github.com/artefactory/xhec-mlops-project-solution/blob/main/.pre-commit-config.yaml)
 </div>
 
 TODO: if not done already, check out the [Skaff documentation](https://artefact.roadie.so/catalog/default/component/repo-builder-ds/docs/) for more information about the generated repository.
@@ -18,7 +18,7 @@ TODO
 
 ## Table of Contents
 
-- [xhec-mlops-crashcourse-2023-project](#xhec-mlops-crashcourse-2023-project)
+- [xhec-mlops-project-solution](#xhec-mlops-project-solution)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -49,7 +49,7 @@ TODO: Add usage instructions here
 
 TODO: Github pages is not enabled by default, you need to enable it in the repository settings: Settings > Pages > Source: "Deploy from a branch" / Branch: "gh-pages" / Folder: "/(root)"
 
-A detailed documentation of this project is available [here](https://artefactory.github.io/xhec-mlops-crashcourse-2023-project/)
+A detailed documentation of this project is available [here](https://artefactory.github.io/xhec-mlops-project-solution/)
 
 To serve the documentation locally, run the following command:
 
