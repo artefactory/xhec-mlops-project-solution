@@ -1,7 +1,6 @@
 from typing import List
 
 import pandas as pd
-from loguru import logger
 from sklearn.base import BaseEstimator
 from sklearn.preprocessing import OneHotEncoder
 
@@ -18,6 +17,5 @@ def run_inference(
     data = pd.concat(
         [df_num, pd.DataFrame(df_cat, columns=encoder.categories_[0].tolist())], axis=1
     )
-    logger.info(data.head())
     prediction = model.predict(data)
     return prediction
