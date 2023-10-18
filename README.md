@@ -19,7 +19,7 @@ This repository contains the solution for the X-HEC MLOps Project on the industr
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
-- [Training the model](#training-the-model)
+  - [Training the model](#training-the-model)
 
 ## Installation
 
@@ -81,7 +81,7 @@ Example:
 }
 ```
 
-# Training the model
+## Training the model
 
 This repository comes with a pre-trained model. If you want to train the model yourself, you can:
 
