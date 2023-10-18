@@ -8,11 +8,10 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 [![Linting: ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-[![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-informational?logo=pre-commit&logoColor=white)](https://github.com/artefactory/xhec-mlops-project-solution/blob/main/.pre-commit-config.yaml)
 </div>
 
-TODO
+This repository contains the solution for the X-HEC MLOps Project on the industrialization of [Abalone age prediction](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset) model.
 
 ## Table of Contents
 
@@ -20,57 +19,86 @@ TODO
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Documentation](#documentation)
-  - [Repository Structure](#repository-structure)
+- [Training the model](#training-the-model)
 
 ## Installation
 
-To install the required packages in a virtual environment, run the following command:
+Build the image docker with the following command:
 
 ```bash
-make install
-```
-
-TODO: Choose between conda and venv if necessary or let the Makefile as is and copy/paste the [MORE INFO installation section](MORE_INFO.md#eased-installation) to explain how to choose between conda and venv.
-
-A complete list of available commands can be found using the following command:
-
-```bash
-make help
+docker build -t abalone:solution -f Dockerfile.app .
 ```
 
 ## Usage
 
-TODO: Add usage instructions here
-
-## Documentation
-
-TODO: Github pages is not enabled by default, you need to enable it in the repository settings: Settings > Pages > Source: "Deploy from a branch" / Branch: "gh-pages" / Folder: "/(root)"
-
-A detailed documentation of this project is available [here](https://artefactory.github.io/xhec-mlops-project-solution/)
-
-To serve the documentation locally, run the following command:
+1. Run the prediction API:
 
 ```bash
-mkdocs serve
+docker run -dp 0.0.0.0:8000:8001 abalone:solution
 ```
 
-To build it and deploy it to GitHub pages, run the following command:
+2. Go to http://localhost:8000/docs
+
+3. In the /predict section, click on "Try it out".
+
+4. Replace the Request body with the data of your choice.
+
+Example:
+
+```json
+[
+    {
+        "sex": "M",
+        "length": 0.455,
+        "diameter": 0.365,
+        "height": 0.095,
+        "whole_weight": 0.514,
+        "shucked_weight": 0.2245,
+        "viscera_weight": 0.101,
+        "shell_weight": 0.15
+    },
+    {
+        "sex": "M",
+        "length": 0.35,
+        "diameter": 0.265,
+        "height": 0.09,
+        "whole_weight": 0.2255,
+        "shucked_weight": 0.0995,
+        "viscera_weight": 0.0485,
+        "shell_weight": 0.07
+    }
+]
+```
+
+5. Click on "Execute" to get the prediction. You should get a 201 response with the prediction in the Response body, like this:
+
+```json
+{
+  "predicted_abalone_ages": [
+    9.28125,
+    7.90625
+  ]
+}
+```
+
+# Training the model
+
+This repository comes with a pre-trained model. If you want to train the model yourself, you can:
+
+1. Install the dependencies in a virtual environment:
 
 ```bash
-make deploy_docs
+pip install -r requirements.txt
 ```
 
-## Repository Structure
+2. Put your data in the `data` folder. The data should be a CSV file with the same columns as the [Abalone dataset](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset).
 
+2. Run the training script:
+
+```bash
+python3 src/modelling/main.py data/abalone.csv
 ```
-.
-├── .github    <- GitHub Actions workflows and PR template
-├── bin        <- Bash files
-├── config     <- Configuration files
-├── docs       <- Documentation files (mkdocs)
-├── lib        <- Python modules
-├── notebooks  <- Jupyter notebooks
-├── secrets    <- Secret files (ignored by git)
-└── tests      <- Unit tests
-```
+
+This command will override the pre-trained model and encoder in the `src/web_service/local_objects` folder.
+
+You can finally rebuild the docker image and run it again to use your new model.
