@@ -1,18 +1,17 @@
+import argparse
 from pathlib import Path
 
 import pandas as pd
-import typer
 from loguru import logger
+from prefect import flow
 
 from config.config import OBJECTS_PATH, TARGET
 from src.modelling.preprocessing import preprocess
 from src.modelling.training import train_model
 from src.modelling.utils import pickle_object
 
-app = typer.Typer()
 
-
-@app.command()
+@flow(name="Train Abalone Model")
 def main(trainset_path: Path) -> None:
     """Train a model using the data at the given path."""
     logger.info(f"Training model using data at {trainset_path}")
@@ -29,4 +28,7 @@ def main(trainset_path: Path) -> None:
 
 
 if __name__ == "__main__":
-    app()
+    parser = argparse.ArgumentParser(description="Train a model using the data at the given path.")
+    parser.add_argument("trainset_path", type=str, help="Path to the training set")
+    args = parser.parse_args()
+    main(args.trainset_path)

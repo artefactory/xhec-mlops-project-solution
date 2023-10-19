@@ -7,7 +7,8 @@ from sklearn.base import BaseEstimator
 
 
 @lru_cache
-def load_model(filepath: os.PathLike) -> BaseEstimator:
-    logger.info(f"Loading model from {filepath}")
+def load_object(filepath: os.PathLike) -> BaseEstimator:
+    """Load a pickled object from the given filepath."""
+    logger.info(f"Loading object from {filepath}")
     with open(filepath, "rb") as f:
         return pickle.load(f)
