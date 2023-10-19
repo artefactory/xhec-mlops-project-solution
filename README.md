@@ -37,6 +37,25 @@ docker build -t abalone:solution -f Dockerfile.app .
 docker run -dp 0.0.0.0:8000:8001 abalone:solution
 ```
 
+> [!NOTE]
+> The `-d` flag is used to run the container in detached mode. The container will thus run in the background.
+
+If you want to get the logs of the container, you can:
+
+i. Get the container ID:
+
+```bash
+docker ps
+```
+
+ii. Copy/paste the container ID
+
+iii. Get the logs:
+
+```bash
+docker logs <container_id> --follow
+```
+
 2. Go to http://localhost:8000/docs
 
 3. In the /predict section, click on "Try it out".
@@ -81,17 +100,25 @@ Example:
 }
 ```
 
+
+6. When done with the API, you can stop the container with:
+
+```bash
+docker kill <container_id>
+```
+
 ## Training the model
 
-This repository comes with a pre-trained model. If you want to train the model yourself, you can:
+This repository comes with a pre-trained model and pre-fitted encoder (`src/web_service/local_objects`). If you want to train the model yourself, you can:
 
 1. Install the dependencies in a virtual environment (python 3.9 or higher):
 
 ```bash
 pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 
-2. Put your data in the `data` folder. The data should be a CSV file with the same columns as the [Abalone dataset](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset).
+1. Put your data in the `data` folder. The data should be a CSV file with the same columns as the [Abalone dataset](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset).
 
 2. Run the training script:
 
