@@ -26,5 +26,3 @@ class InputAbaloneData(BaseModel):
 
 class PredictionOut(BaseModel):
     predicted_abalone_ages: List[float]
-    predicted_abalone_ages: List[float]
-    predicted_abalone_ages: List[float]
