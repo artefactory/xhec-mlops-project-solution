@@ -1,3 +1,4 @@
+import argparse
 from pathlib import Path
 
 import pandas as pd
@@ -27,4 +28,7 @@ def main(trainset_path: Path) -> None:
 
 
 if __name__ == "__main__":
-    main("data/abalone.csv")
+    parser = argparse.ArgumentParser(description="Train a model using the data at the given path.")
+    parser.add_argument("trainset_path", type=str, help="Path to the training set")
+    args = parser.parse_args()
+    main(args.trainset_path)
