@@ -34,7 +34,7 @@ docker build -t abalone:solution -f Dockerfile.app .
 1. Run the prediction API:
 
 ```bash
-docker run -dp 0.0.0.0:8000:8001 abalone:solution
+docker run -d -p 0.0.0.0:8000:8001 -p 0.0.0.0:4200:4201 abalone:solution
 ```
 
 > [!NOTE]
@@ -100,6 +100,7 @@ Example:
 }
 ```
 
+6. You can also visualize the Prefect Flow Runs here: http://localhost:4200/flow-runs
 
 6. When done with the API, you can stop the container with:
 
