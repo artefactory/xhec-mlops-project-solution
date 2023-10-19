@@ -1,3 +1,6 @@
+-r requirements.txt
+-e .
+pip-tools==7.3.0
 black==22.10.0
 ruff==0.0.272
 isort==5.12.0
