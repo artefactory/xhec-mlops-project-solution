@@ -4,3 +4,4 @@ from pathlib import Path
 ROOT_PATH = Path(__file__).parent.parent
 OBJECTS_PATH = ROOT_PATH / "src/web_service/local_objects"
 TARGET = "rings"
+MLFLOW_TRACKING_URI = "http://mlflow:5000"
